@@ -10,7 +10,8 @@ Daca phpMyAdmin da eroare la rulare, se va inlocui linia 165, astfel: sudo nano 
 cu
 $cfg['Servers'][$i]['AllowRoot'] = false;
 
-Daca nu se poate accesa phpMyAdmin primind eroarea  mysqli::real_connect(): (HY000/1045): Access denied for user 'utilizator'@'localhost' (using password: YES)
+Daca nu se poate accesa phpMyAdmin primind eroarea: mysqli::real_connect(): (HY000/1045): Access denied for user 'utilizator'@'localhost' (using password: YES)
+atunci
 CREATE USER 'utilizator'@'localhost' IDENTIFIED BY 'oParolaBlana123!';
 GRANT ALL PRIVILEGES ON *.* TO 'utilizator'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
