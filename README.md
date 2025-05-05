@@ -15,3 +15,13 @@ atunci
 CREATE USER 'utilizator'@'localhost' IDENTIFIED BY 'oParolaBlana123!';
 GRANT ALL PRIVILEGES ON *.* TO 'utilizator'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+
+Daca in phpMyAdmin, inca exista utilizatorul root sau o derivatie, se va actiona astfel:
+* se va verifica exista oricarei extensii root prin:
+sudo mysql
+SELECT User, Host FROM mysql.user WHERE User = 'root';
+* apoi se va sterge acel utilizator prin:
+DROP USER 'root'@'127.0.0.1';
+DROP USER 'root'@'::1';
+DROP USER 'root'@'%';
+(se va adapta in functie de ceea ce se gaseste in server)
