@@ -25,3 +25,5 @@ DROP USER 'root'@'127.0.0.1';
 DROP USER 'root'@'::1';
 DROP USER 'root'@'%';
 (se va adapta in functie de ceea ce se gaseste in server)
+
+Fisierul lamp_change_ssh_port.sh contine si modificarea automata a port-ului pentru SSH in baza input-ului, adica in functie de port-ul care se vrea si va adauga si regula in UFW.
