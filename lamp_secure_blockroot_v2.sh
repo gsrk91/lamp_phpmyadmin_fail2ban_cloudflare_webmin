@@ -41,7 +41,7 @@ DELETE FROM mysql.user WHERE User='root' AND Host!='localhost';
 CREATE USER IF NOT EXISTS '${MYSQL_ADMIN_USER}'@'localhost' IDENTIFIED BY '${MYSQL_ADMIN_PASS}';
 GRANT ALL PRIVILEGES ON *.* TO '${MYSQL_ADMIN_USER}'@'localhost' WITH GRANT OPTION;
 
-RENAME USER 'root'@'localhost' TO 'disabled_root'@'localhost';
+DROP USER IF EXISTS 'root'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
